@@ -1,0 +1,34 @@
+{
+    "name": "robvanaarle/ultimo-acl-mvc",
+    "description": "Access control list for Ultimo MVC",
+    "type": "library",
+    "keywords": [
+        "acl",
+        "security",
+        "access",
+        "role",
+        "privilege",
+        "UltimoMVC"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+	  		{
+	    	  "name": "Rob van Aarle"
+	  		}
+	  ],
+    "repositories": [
+      	{
+        	"type": "vcs",
+        	"url": "https://github.com/robvanaarle/ultimo-acl"
+      	}
+    ],
+    "require": {
+        "robvanaarle/ultimo-acl": "dev-master"
+    },
+    "autoload": {
+    		"psr-4": {
+       			"ultimo\\": "src/ultimo/"
+    		}
+  }
+}
+
