@@ -20,10 +20,25 @@
       	{
         	"type": "vcs",
         	"url": "https://github.com/robvanaarle/ultimo-acl"
+      	},
+      	{
+        	"type": "vcs",
+        	"url": "https://github.com/robvanaarle/ultimo-session"
+      	},
+      	{
+        	"type": "vcs",
+        	"url": "https://github.com/robvanaarle/ultimo-phptpl-mvc"
+      	},
+      	{
+        	"type": "vcs",
+        	"url": "https://github.com/robvanaarle/ultimo-mvc"
       	}
     ],
     "require": {
-        "robvanaarle/ultimo-acl": "dev-master"
+        "robvanaarle/ultimo-acl": "dev-master",
+        "robvanaarle/ultimo-phptpl-mvc": "dev-master",
+        "robvanaarle/ultimo-mvc": "dev-master",
+        "robvanaarle/ultimo-session": "dev-master"
     },
     "autoload": {
     		"psr-4": {
