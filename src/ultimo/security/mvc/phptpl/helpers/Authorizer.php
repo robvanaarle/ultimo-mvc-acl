@@ -28,6 +28,29 @@ class Authorizer extends \ultimo\phptpl\mvc\Helper {
   }
   
   /**
+   * Returns the Acl scoped for the given module. If the module has no Acl,
+   * the application Acl is returned.
+   * @param $moduleNamespace The namespace of the module to check the privilege
+   * for. If not specified, the current module will be used.
+   * @return \ultimo\security\Acl The Acl scoped for the module.
+   */
+  protected function getAcl($moduleNamespace=null) {
+    if ($moduleNamespace === null) {
+      $moduleNamespace = $this->module->getNamespace();
+    }
+    
+    // get the acl of the module
+    $acl = $this->application->getPlugin('authorizer')->getAcl($moduleNamespace);
+    
+    // if the module has no acl, get the application acl
+    if ($acl === null) {
+      $acl = $this->application->getPlugin('authorizer')->getAcl(null);
+    }
+    
+    return $acl;
+  }
+  
+  /**
    * Returns whether the user using the application has permission to the
    * specified privilege.
    * @param string $privilege The name of the privilege.
@@ -39,10 +62,8 @@ class Authorizer extends \ultimo\phptpl\mvc\Helper {
    * the specified privilege.
    */
   public function isAllowed($privilege, $callbackParam = null, $moduleNamespace=null) {
-    if ($moduleNamespace === null) {
-      $moduleNamespace = $this->module->getNamespace();
-    }
-    $acl = $this->application->getPlugin('authorizer')->getAcl($moduleNamespace);
+    $acl = $this->getAcl($moduleNamespace);
+    
     if ($acl === null) {
       return true;
     }
@@ -64,10 +85,8 @@ class Authorizer extends \ultimo\phptpl\mvc\Helper {
    * specified role.
    */
   public function isRole($role, $moduleNamespace=null) {
-    if ($moduleNamespace === null) {
-      $moduleNamespace = $this->module->getNamespace();
-    }
-    $acl = $this->application->getPlugin('authorizer')->getAcl($moduleNamespace);
+    $acl = $this->getAcl($moduleNamespace);
+    
     if ($acl === null) {
       return true;
     }
