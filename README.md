@@ -1,11 +1,10 @@
-# Ultimo ACL MVC
+# Ultimo MVC ACL
 Access control list for Ultimo MVC
 
 ## Requirements
 
 * PHP 5.3
 * Ultimo ACL
-* Ultimo Phptpl MVC
 * Ultimo MVC
 * Ultimo Session
 
@@ -49,7 +48,7 @@ Access control list for Ultimo MVC
 	  }
 	}
 
-### Check priviliges in View
+### Check priviliges in View (if using Ultimo MVC Phptpl)
 	<?php if ($this->authorizer()->isAllowed('message.read')): ?>
 		<a href="link-to-message>Message</a>
 	<?php endif ?>

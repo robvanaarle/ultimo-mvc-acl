@@ -1,5 +1,5 @@
 {
-    "name": "robvanaarle/ultimo-acl-mvc",
+    "name": "robvanaarle/ultimo-mvc-acl",
     "description": "Access control list for Ultimo MVC",
     "type": "library",
     "keywords": [
@@ -27,16 +27,11 @@
       	},
       	{
         	"type": "vcs",
-        	"url": "https://github.com/robvanaarle/ultimo-phptpl-mvc"
-      	},
-      	{
-        	"type": "vcs",
         	"url": "https://github.com/robvanaarle/ultimo-mvc"
       	}
     ],
     "require": {
         "robvanaarle/ultimo-acl": "dev-master",
-        "robvanaarle/ultimo-phptpl-mvc": "dev-master",
         "robvanaarle/ultimo-mvc": "dev-master",
         "robvanaarle/ultimo-session": "dev-master"
     },
